@@ -19,8 +19,8 @@ def square_rooting(a):
     return float(a) ** 0.5
 
 class Calculator:
-    result=0
-    data=[]
+    result = 0
+    data = []
     def __init__(self):
         pass
 
