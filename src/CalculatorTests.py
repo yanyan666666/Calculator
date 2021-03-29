@@ -44,5 +44,11 @@ class MyTestCase(unittest.TestCase):
             self.assertEqual(self.calculator.add(row['Value 1'], row['Value 2']), float(row['Result']))
             self.assertEqual(self.calculator.result, float(row['Result']))
 
+    def test_subtract_csv(self):
+        test_data_subtract = CsvReader("../src/CsvFiles/Unit Test Subtraction.csv").data
+        for row in test_data_subtract:
+            self.assertEqual(self.calculator.subtract(row['Value 2'], row['Value 1']), float(row['Result']))
+            self.assertEqual(self.calculator.result, float(row['Result']))
+
     if __name__ == '__main__':
         unittest.main()
