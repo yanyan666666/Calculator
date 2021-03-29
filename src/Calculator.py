@@ -37,7 +37,7 @@ class Calculator:
         return self.result
 
     def divide(self, a, b):
-        self.result=dividing(a, b)
+        self.result=round(dividing(a, b), 9)
         return self.result
 
     def square(self, a):
