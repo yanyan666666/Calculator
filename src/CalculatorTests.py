@@ -1,7 +1,7 @@
 import unittest
 from Calculator import Calculator
-
-
+from CsvReader import CsvReader
+from pprint import pprint
 
 
 class MyTestCase(unittest.TestCase):
@@ -38,11 +38,11 @@ class MyTestCase(unittest.TestCase):
         self.assertEqual(self.calculator.square_root(4), 2)
         self.assertEqual(self.calculator.result, 2)
 
-    def test_addition(self):
-        test_data_add = CsvReader('/src/CsvFiles/Unit Test Addition.csv').data
+    def test_add_csv(self):
+        test_data_add = CsvReader("../src/CsvFiles/Unit Test Addition.csv").data
         for row in test_data_add:
-            self.assertEqual(self.calculator.add(row['Value 1'], row['Value 2']), int(row['Result']))
-            self.assertEqual(self.calculator.result, int(row['Result']))
+            self.assertEqual(self.calculator.add(row['Value 1'], row['Value 2']), float(row['Result']))
+            self.assertEqual(self.calculator.result, float(row['Result']))
 
     if __name__ == '__main__':
         unittest.main()
